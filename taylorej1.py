@@ -1,12 +1,14 @@
 import matplotlib.pyplot as plt
 import numpy as np
-punto_inicial = int(input("Ingrese el punto inicial: "))
-y0 = int(input("Ingrese el valor de y0: "))
-punto_final = int(input("Ingrese el punto final: "))
+#definicion de puntos iniciales y final
+punto_inicial = float(input("Ingrese el punto inicial: "))
+y0 = float(input("Ingrese el valor de y0: "))
+punto_final = float(input("Ingrese el punto final: "))
 n = 200
-h = (punto_final - punto_inicial) / n
+h = (punto_final - punto_inicial) / n #paso
 puntos = []
 
+#funcion 1
 def f1(x, y):
     return (2-x-y)/(x-y+4)
 
