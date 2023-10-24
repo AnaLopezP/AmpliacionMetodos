@@ -11,6 +11,6 @@ def iteracion(x, y):
         x1 = x + h
         y1 = y + h*f(x, y)
         iteracion(x1, y1)
+        print(x1, y1)
+        return x1, y1
         
-def polinomio_taylor(x, y):
-    return y + h*f(x, y)
