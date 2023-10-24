@@ -4,7 +4,7 @@ import numpy as np
 punto_inicial = float(input("Ingrese el punto inicial: "))
 y0 = float(input("Ingrese el valor de y0: "))
 punto_final = float(input("Ingrese el punto final: "))
-n = 200
+n = 200 #divisiones
 h = (punto_final - punto_inicial) / n #paso
 puntos = []
 
@@ -12,6 +12,7 @@ puntos = []
 def f1(x, y):
     return (2-x-y)/(x-y+4)
 
+#funcion 2
 def f2(x, y):
     return (2*x*np.exp(-3*x) )-3*y   
 
