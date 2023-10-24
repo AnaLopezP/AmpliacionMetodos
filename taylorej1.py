@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 punto_inicial = int(input("Ingrese el punto inicial: "))
+y0 = int(input("Ingrese el valor de y0: "))
 punto_final = int(input("Ingrese el punto final: "))
 n = 200
 h = (punto_final - punto_inicial) / n
@@ -30,5 +31,5 @@ def grafica(puntos):
     plt.plot(x, y)
     plt.show()
     
-iteracion(punto_inicial, 4.5, f1)
+iteracion(punto_inicial, y0, f1)
 grafica(puntos)
