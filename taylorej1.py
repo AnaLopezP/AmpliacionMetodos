@@ -1,14 +1,18 @@
 import matplotlib.pyplot as plt
+import numpy as np
 punto_inicial = int(input("Ingrese el punto inicial: "))
 punto_final = int(input("Ingrese el punto final: "))
-N = 100
-h = (punto_final - punto_inicial) / N
+n = 10
+h = (punto_final - punto_inicial) / n
 puntos = []
 
-def f(x, y):
+def f1(x, y):
     return (2-x-y)/(x-y+4)
 
-def iteracion(x, y):
+def f2(x, y):
+    return (2*x*np.exp^(-3*x) )-3*y   
+
+def iteracion(x, y, f):
     while x <= punto_final:
         x1 = x + h
         y1 = y + h*f(x, y)
