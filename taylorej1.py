@@ -4,7 +4,7 @@ import numpy as np
 punto_inicial = float(input("Ingrese el punto inicial: "))
 y0 = float(input("Ingrese el valor de y0: "))
 punto_final = float(input("Ingrese el punto final: "))
-n = 100 #divisiones
+n = float(input("Ingrese numero divisiones: ")) #divisiones
 h = (punto_final - punto_inicial) / n #paso
 puntos = []
 
