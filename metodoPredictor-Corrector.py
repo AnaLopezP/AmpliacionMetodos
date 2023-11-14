@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 #definicion de puntos iniciales y final
+
 punto_inicial = float(input("Ingrese el punto inicial: "))
 y0 = float(input("Ingrese el valor de y0: "))
 punto_final = float(input("Ingrese el punto final: "))
@@ -11,6 +12,16 @@ puntos = []
 #funcion 1
 def f1(x, y):
     return (2-3*x-y)/(x-1)
+
+def f2(x, y):
+    return (1+4*x*y)/(3*x**2)
+
+def f3(x, y):
+    return (x*y)/(x**2 + y**2)
+
+def f4(x, y):
+    return (x+y)/(x-y)
+
 def iteracion(x, y, f):
     while x <= punto_final:
         x1 = x + h
@@ -31,6 +42,9 @@ def grafica(puntos):
     plt.show()
     
 iteracion(punto_inicial, y0, f1)
+#iteracion(punto_inicial, y0, f2)
+
 grafica(puntos)
 
 '''La solución aproximada es w = -8.20, con la funcion f1. La solución real es y(6) = -8.20. Hay un error de 0'''
+'''En la funcion 2, la solucion aprox es w = -11.4539. La solucion real y(4) = -11.46. El error es de 0.0061'''
