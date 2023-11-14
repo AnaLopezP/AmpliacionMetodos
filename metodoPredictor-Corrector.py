@@ -32,3 +32,5 @@ def grafica(puntos):
     
 iteracion(punto_inicial, y0, f1)
 grafica(puntos)
+
+'''La solución aproximada es w = -8.20, con la funcion f1. La solución real es y(6) = -8.20. Hay un error de 0'''
