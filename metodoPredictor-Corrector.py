@@ -41,8 +41,8 @@ def grafica(puntos):
     plt.plot(x, y)
     plt.show()
     
-iteracion(punto_inicial, y0, f1)
-#iteracion(punto_inicial, y0, f2)
+iteracion(punto_inicial, y0, f2)
+
 
 grafica(puntos)
 
