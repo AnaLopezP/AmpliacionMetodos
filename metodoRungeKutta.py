@@ -12,9 +12,6 @@ puntos = []
 def f1(x, y):
     return (1+4*x*y)/(3*x*x)
 
-#funcion 2
-def f2(x, y):
-    return (2*x*np.exp(-3*x) )-3*y   
 
 def iteracion(x, y, f):
     while x <= punto_final:
@@ -36,3 +33,4 @@ def grafica(puntos):
     
 iteracion(punto_inicial, y0, f1)
 grafica(puntos)
+#la solucion aproximada es w100 = -11.4621 y la solucion real es y(4) = -11.46. El error es de 0.0021
