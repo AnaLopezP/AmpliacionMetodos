@@ -10,8 +10,7 @@ puntos = []
 
 #funcion 1
 def f1(x, y):
-    return (1+4*x*y)/(3*x*x)
-
+    return (y - x*x + 1)
 
 def iteracion(x, y, f):
     while x <= punto_final:
