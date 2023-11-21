@@ -34,5 +34,17 @@ def grafica(puntos):
     plt.plot(x, y)
     plt.show()
     
+    
+
+def solucion1(x):
+    return (-0.5*np.exp(-x) + x**2 + x + 1)
+
+def solucion2(x):
+    return (-1*np.exp(-x) + x**2 + x + 1)
+
+def solucion3(x):
+    return (-2*np.exp(-x) + x**2 + x + 1)
+
+
 iteracion(punto_inicial, y0, f1)
 grafica(puntos)
