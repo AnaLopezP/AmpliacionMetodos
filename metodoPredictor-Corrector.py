@@ -14,7 +14,8 @@ def f1(x, y):
     return (2-3*x-y)/(x-1)
 
 def f2(x, y):
-    return (1+4*x*y)/(3*x**2)
+    return (y - x*x + 1)
+
 
 def f3(x, y):
     return (x*y)/(x**2 + y**2)
