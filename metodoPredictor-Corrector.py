@@ -11,17 +11,7 @@ puntos = []
 
 #funcion 1
 def f1(x, y):
-    return (2-3*x-y)/(x-1)
-
-def f2(x, y):
-    return (y - x*x + 1)
-
-
-def f3(x, y):
-    return (x*y)/(x**2 + y**2)
-
-def f4(x, y):
-    return (x+y)/(x-y)
+    return (-2*x*(np.exp(x**2)*y-1)/np.exp(x**2))
 
 def iteracion(x, y, f):
     while x <= punto_final:
@@ -42,7 +32,7 @@ def grafica(puntos):
     plt.plot(x, y)
     plt.show()
     
-iteracion(punto_inicial, y0, f2)
+iteracion(punto_inicial, y0, f1)
 
 
 grafica(puntos)

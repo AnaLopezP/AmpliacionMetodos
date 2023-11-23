@@ -10,11 +10,7 @@ puntos = []
 
 #funcion 1
 def f1(x, y):
-    return (y - x*x + 1)
-
-#funcion 2
-def f2(x, y):
-    return (2*x*np.exp(-3*x) )-3*y   
+    return (-2*x*(np.exp(x**2)*y-1)/np.exp(x**2))
 
 def iteracion(x, y, f):
     k1 = f(x, y)
