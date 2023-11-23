@@ -12,10 +12,6 @@ puntos_sol = []
 def f1(x, y):
     return (-2*x*(np.exp(x**2)*y-1)/np.exp(x**2))
 
-#funcion 2
-def f2(x, y):
-    return (2*x*np.exp(-3*x) )-3*y   
-
 def iteracion(x, y, f):
     while x <= punto_final:
         x1 = x + h
@@ -45,13 +41,13 @@ def iteracion_solucion(x, f):
         return x1, y1
     
 def solucion1(x):
-    return (-0.5*np.exp(x) + x**2 + 2*x + 1)
+    return ((x**2)/np.exp(x**2))
 
 def solucion2(x):
-    return (-1*np.exp(x) + x**2 + 2*x + 1)
+    return ((1 + x**2)/np.exp(x**2))
 
 def solucion3(x):
-    return (-2*np.exp(x) + x**2 + 2*x + 1)
+    return (-1 + (x**2)/np.exp(x**2))
 
 
 iteracion(punto_inicial, y0, f1)
