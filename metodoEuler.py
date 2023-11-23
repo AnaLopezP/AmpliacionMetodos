@@ -10,7 +10,7 @@ puntos = []
 puntos_sol = []
 #funcion 1
 def f1(x, y):
-    return (y - x*x + 1)
+    return (-2*x*(np.exp(x**2)*y-1)/np.exp(x**2))
 
 #funcion 2
 def f2(x, y):
