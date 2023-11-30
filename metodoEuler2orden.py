@@ -15,6 +15,10 @@ puntos_sol = []
 
 #funcion
 def f1(x, u, v):
+    #donde u = y
+    #v = y'
+    #y'' = -av - bu + f(x) 
+    #f(x) es el termino independiente
     return None
 
 def valorA(x):
