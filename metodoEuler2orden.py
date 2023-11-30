@@ -17,12 +17,21 @@ puntos_sol = []
 def f1(x, y):
     return (-2*x*(np.exp(x**2)*y-1)/np.exp(x**2))
 
+def valorA(x):
+    a = None
+    return a
+
+def valorB(x):
+    b = None
+    return b
+
 def iteracion(x, u, v, a, b, f):
     while x <= punto_final:
         x1 = x + h
-        u1 = u + h*v
+        u1 = u + h*v    
         v1 = v + h*(-b* u - a*v + f(x))
-        iteracion(x1, u1, v1, a, b, f)
+        valorA(x1)
+        iteracion(x1, u1, v1, valorA, b, f)
         puntos.append((x1, u1))
         print(x1, u1)
         return x1, u1
