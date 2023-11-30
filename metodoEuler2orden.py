@@ -31,7 +31,8 @@ def iteracion(x, u, v, a, b, f):
         u1 = u + h*v    
         v1 = v + h*(-b* u - a*v + f(x))
         valorA(x1)
-        iteracion(x1, u1, v1, valorA, b, f)
+        valorB(x1)
+        iteracion(x1, u1, v1, valorA, valorB, f)
         puntos.append((x1, u1))
         print(x1, u1)
         return x1, u1
@@ -44,7 +45,9 @@ def grafica(puntos):
         y.append(i[1])
     plt.plot(x, y)
     plt.show()
-    
+
+
+iteracion(punto_inicial, u, v, valorA(punto_inicial), valorB(punto_inicial), f1)
     
 '''def iteracion_solucion(x, f):
     while x <= punto_final:
@@ -65,7 +68,6 @@ def solucion3(x):
     return (-1 + (x**2)/np.exp(x**2))'''
 
 '''
-iteracion(punto_inicial, y0, f1)
 grafica(puntos)
 iteracion_solucion(punto_inicial, solucion1)
 grafica(puntos_sol)
