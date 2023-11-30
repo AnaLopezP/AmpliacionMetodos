@@ -18,24 +18,14 @@ def f1(x, u, v):
     #donde u = y
     #v = y'
     #f(x) es el termino independiente. despejo y'' de la ecuacion
-    return (1 - v - u)
+    return (-u - (1/x)*v)
 
-def valorA(x):
-    a = 1
-    return a
-
-def valorB(x):
-    b = 1
-    return b
-
-def iteracion(x, u, v, a, b, f):
+def iteracion(x, u, v, f):
     while x <= punto_final:
         x1 = x + h
         u1 = u + h*v    
         v1 = v + h*(f (x, u, v))
-        valorA(x1)
-        valorB(x1)
-        iteracion(x1, u1, v1, valorA, valorB, f)
+        iteracion(x1, u1, v1, f)
         puntos.append((x1, u1))
         print(x1, u1)
         return x1, u1
@@ -50,7 +40,7 @@ def grafica(puntos):
     plt.show()
 
 
-iteracion(punto_inicial, u, v, valorA(punto_inicial), valorB(punto_inicial), f1)
+iteracion(punto_inicial, u, v, f1)
 grafica(puntos)
     
 '''def iteracion_solucion(x, f):
