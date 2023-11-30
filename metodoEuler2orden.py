@@ -17,23 +17,22 @@ puntos_sol = []
 def f1(x, u, v):
     #donde u = y
     #v = y'
-    #y'' = -av - bu + f(x) 
-    #f(x) es el termino independiente
-    return None
+    #f(x) es el termino independiente. despejo y'' de la ecuacion
+    return (1 - v - u)
 
 def valorA(x):
-    a = None
+    a = 1
     return a
 
 def valorB(x):
-    b = None
+    b = 1
     return b
 
 def iteracion(x, u, v, a, b, f):
     while x <= punto_final:
         x1 = x + h
         u1 = u + h*v    
-        v1 = v + h*(-b* u - a*v + f(x))
+        v1 = v + h*(f1(x, u, v))
         valorA(x1)
         valorB(x1)
         iteracion(x1, u1, v1, valorA, valorB, f)
@@ -52,6 +51,7 @@ def grafica(puntos):
 
 
 iteracion(punto_inicial, u, v, valorA(punto_inicial), valorB(punto_inicial), f1)
+grafica(puntos)
     
 '''def iteracion_solucion(x, f):
     while x <= punto_final:
