@@ -32,7 +32,7 @@ def iteracion(x, u, v, a, b, f):
     while x <= punto_final:
         x1 = x + h
         u1 = u + h*v    
-        v1 = v + h*(f1(x, u, v))
+        v1 = v + h*(f (x, u, v))
         valorA(x1)
         valorB(x1)
         iteracion(x1, u1, v1, valorA, valorB, f)
