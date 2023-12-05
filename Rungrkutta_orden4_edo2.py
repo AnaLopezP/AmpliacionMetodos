@@ -1,19 +1,23 @@
 import matplotlib.pyplot as plt
 import numpy as np
+
 #definicion de puntos iniciales y final
 punto_inicial = float(input("Ingrese el punto inicial: "))
-y0 = float(input("Ingrese el valor de y0: "))
+u = float(input("Ingrese el valor inicial de u: "))
+v = float(input("Ingrese el valor inicial de v: "))
 punto_final = float(input("Ingrese el punto final: "))
 n = float(input("Ingrese numero divisiones: ")) #divisiones
 h = (punto_final - punto_inicial) / n #paso
 puntos = []
+puntos_sol = []
+
 
 #funcion 1
 def f1(x, u, v):
-    #a = None #el coeficiente lineal de y'
-    #b = None #el coeficiente de y
-    f = None #el termino independiente
-    return f
+    #donde u = y
+    #v = y'
+    #f(x) es el termino independiente. despejo y'' de la ecuacion
+    return (1-u-v)
 
 def iteracion(x, u, v, f, a, b):
     '''(k11, k12) = [[0, 1], [-b (x), -a (x)]]*[[u], [v]] + [[0], [f (x)]]
