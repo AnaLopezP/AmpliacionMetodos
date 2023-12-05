@@ -16,7 +16,6 @@ for m in range(0, ene/2):
     uve = sum((-1)**m*(ene-m-1)/(m*(ene-2*m-1))*((-2)**(ene-2*m-1)))
     print(uu)
 '''
-
 #funcion 1
 def f1(x, u, v):
     #donde u = y
