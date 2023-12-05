@@ -10,21 +10,21 @@ n = float(input("Ingrese numero divisiones: ")) #divisiones
 h = (punto_final - punto_inicial) / n #paso
 puntos = []
 puntos_sol = []
-
+'''ene = float(input("Ingrese el valor de n: "))
+uu = (-1)**ene
+for m in range(0, ene/2):
+    uve = sum((-1)**m*(ene-m-1)/(m*(ene-2*m-1))*((-2)**(ene-2*m-1)))
+    print(uu)
+'''
 
 #funcion 1
 def f1(x, u, v):
     #donde u = y
     #v = y'
     #f(x) es el termino independiente. despejo y'' de la ecuacion
-    return (1-u-v)
+    return None
 
 def iteracion(x, u, v, f):
-    '''(k11, k12) = [[0, 1], [-b (x), -a (x)]]*[[u], [v]] + [[0], [f (x)]]
-    (k21, k22) = [[0, 1], [-b (x + h/2), -a (x + h/2)]]*[[u + (h/2)*k11], [v + (h/2)*k12]] + [[0], [f (x + h/2)]]
-    (k31, k32) = [[0, 1], [-b (x + h/2), -a (x + h/2)]]*[[u + (h/2)*k21], [v + (h/2)*k22]] + [[0], [f (x + h/2)]]
-    (k41, k42) = [[0, 1], [-b (x + h), -a (x + h)]]*[[u + h*k31], [v + h*k32]] + [[0], [f (x + h)]]
-    '''
     k11 = v
     k12 = f(x, u, v)
     k21 = v + (h/2)*k11
