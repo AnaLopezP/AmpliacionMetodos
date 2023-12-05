@@ -18,7 +18,7 @@ def f1(x, u, v):
     #donde u = y
     #v = y'
     #f(x) es el termino independiente. despejo y'' de la ecuacion
-    return (-(1-((25/4)/x**2))*u - (1/x)*v)
+    return ((2*x/(1-x**2))*v)
 
 def iteracion(x, u, v, f):
     while x <= punto_final:
