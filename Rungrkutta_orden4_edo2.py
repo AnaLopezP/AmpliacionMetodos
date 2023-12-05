@@ -19,7 +19,7 @@ def f1(x, u, v):
     #f(x) es el termino independiente. despejo y'' de la ecuacion
     return (1-u-v)
 
-def iteracion(x, u, v, f, a, b):
+def iteracion(x, u, v, f):
     '''(k11, k12) = [[0, 1], [-b (x), -a (x)]]*[[u], [v]] + [[0], [f (x)]]
     (k21, k22) = [[0, 1], [-b (x + h/2), -a (x + h/2)]]*[[u + (h/2)*k11], [v + (h/2)*k12]] + [[0], [f (x + h/2)]]
     (k31, k32) = [[0, 1], [-b (x + h/2), -a (x + h/2)]]*[[u + (h/2)*k21], [v + (h/2)*k22]] + [[0], [f (x + h/2)]]
@@ -41,8 +41,9 @@ def iteracion(x, u, v, f, a, b):
     
     while x <= punto_final:
         x1 = x + h
-        (u1, v1) = u + h*(a1*(k11, k12) + a2*(k21, k22) + a3*(k31, k32) + a4*(k41, k42))
-        iteracion(x1, u1, v1, f, a, b)
+        u1 = u + h*(a1*(k11) + a2*(k21) + a3*(k31) + a4*(k41))
+        v1 = v + h*(a1*(k12) + a2*(k22) + a3*(k32) + a4*(k42)) 
+        iteracion(x1, u1, v1, f)
         puntos.append((x1, u1))
         print(x1, u1)
         return x1, u1
@@ -56,5 +57,5 @@ def grafica(puntos):
     plt.plot(x, y)
     plt.show()
     
-iteracion(punto_inicial, y0, f1)
+iteracion(punto_inicial, u, v, f1)
 grafica(puntos)
