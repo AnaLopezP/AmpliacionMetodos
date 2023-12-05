@@ -10,12 +10,22 @@ n = float(input("Ingrese numero divisiones: ")) #divisiones
 h = (punto_final - punto_inicial) / n #paso
 puntos = []
 puntos_sol = []
-'''ene = float(input("Ingrese el valor de n: "))
+
+
+def factorial(numero):
+    resultado = 1
+    for i in range(1, numero + 1):
+        resultado *= i
+    return resultado
+ene = float(input("Ingrese el valor de n: "))
 uu = (-1)**ene
-for m in range(0, ene/2):
-    uve = sum((-1)**m*(ene-m-1)/(m*(ene-2*m-1))*((-2)**(ene-2*m-1)))
-    print(uu)
-'''
+for m in range(0, int(ene/2)):
+    sumatorio = sum((-1)**m*factorial(ene-m-1)/(factorial(m)*factorial(ene-2*m-1))*((-2)**(ene-2*m-1)))
+    
+uve = 1/2*sumatorio
+
+
+
 #funcion 1
 def f1(x, u, v):
     #donde u = y
