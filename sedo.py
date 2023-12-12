@@ -67,15 +67,21 @@ def iteracion(x, u, v, fx, fy):
         print(x1, u1)
         return x1, v1, u1
 
-def grafica(puntos):
-    x = []
-    y = []
+def grafica(puntos, puntos_sol):
+    x1 = []
+    y1 = []
+    x2 = []
+    y2 = []
     for i in puntos:
-        x.append(i[0])
-        y.append(i[1])
-    plt.plot(x, y)
+        x1.append(i[0])
+        y1.append(i[1])
+    for i in puntos_sol:
+        x2.append(i[0])
+        y2.append(i[1])
+    plt.plot(x1, y1)
+    plt.plot(x2, y2)    
     plt.show()
     
 iteracion(punto_inicial, u, v, funcionx, funciony)
-grafica(puntos)
-grafica(puntos_sol)
+grafica(puntos, puntos_sol)
+
