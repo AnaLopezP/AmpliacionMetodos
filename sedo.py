@@ -49,7 +49,9 @@ def iteracion(x, u, v, fx, fy):
         iteracion(x1, u1, v1, fx, fy)
         puntos.append((x1, u1))
         puntos_sol.append((x1, v1))
+        print("PUNTOS DE LA FUNCION X")
         print(x1, u1)
+        print("PUNTOS DE LA FUNCION Y")
         print(x1, v1)
         return x1, u1, v1
 
