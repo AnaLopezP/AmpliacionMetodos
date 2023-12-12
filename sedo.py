@@ -10,7 +10,6 @@ n = float(input("Ingrese numero divisiones: ")) #divisiones
 h = (punto_final - punto_inicial) / n #paso
 puntos = []
 puntos_sol = []
-
 print("Para el problema de los conejos y los zorros:")
 p = float(input("Ingrese el valor de p: "))
 q = float(input("Ingrese el valor de q: "))
@@ -48,10 +47,10 @@ def iteracion(x, u, v, fx, fy):
         u1 = u + h*(a1*(k11) + a2*(k21) + a3*(k31) + a4*(k41))
         v1 = v + h*(a1*(k12) + a2*(k22) + a3*(k32) + a4*(k42)) 
         iteracion(x1, u1, v1, fx, fy)
-        puntos.append((x1, v1))
-        puntos_sol.append((x1, u1))
-        print(x1, v1)
+        puntos.append((x1, u1))
+        puntos_sol.append((x1, v1))
         print(x1, u1)
+        print(x1, v1)
         return x1, v1, u1
 
 def grafica(puntos, puntos_sol):
