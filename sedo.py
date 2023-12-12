@@ -11,19 +11,6 @@ h = (punto_final - punto_inicial) / n #paso
 puntos = []
 puntos_sol = []
 
-'''
-def factorial(numero):
-    resultado = 1
-    for i in range(1, numero + 1):
-        resultado *= i
-    return resultado
-ene = float(input("Ingrese el valor de n: "))
-uu = (-1)**ene
-for m in range(0, int(ene/2)):
-    sumatorio = sum((-1)**m*factorial(ene-m-1)/(factorial(m)*factorial(ene-2*m-1))*((-2)**(ene-2*m-1)))
-    
-uve = 1/2*sumatorio
-'''
 print("Para el problema de los conejos y los zorros:")
 p = float(input("Ingrese el valor de p: "))
 q = float(input("Ingrese el valor de q: "))
