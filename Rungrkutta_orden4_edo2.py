@@ -31,6 +31,7 @@ def f1(x, u, v):
     #donde u = y
     #v = y'
     #f(x) es el termino independiente. despejo y'' de la ecuacion
+    # tambien se puede hacer si la ec es no lineal, si hay un y^2, ponemos la u^2 y así
     return None
 
 def iteracion(x, u, v, f):
