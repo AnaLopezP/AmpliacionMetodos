@@ -51,7 +51,7 @@ def iteracion(x, u, v, fx, fy):
         puntos_sol.append((x1, v1))
         print(x1, u1)
         print(x1, v1)
-        return x1, v1, u1
+        return x1, u1, v1
 
 def grafica(puntos, puntos_sol):
     x1 = []
