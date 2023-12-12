@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 #definicion de puntos iniciales y final
-punto_inicial = float(input("Ingrese el punto inicial: "))
+punto_inicial = float(input("Ingrese el punto inicial de t: "))
 u = float(input("Ingrese el valor inicial de u: "))
 v = float(input("Ingrese el valor inicial de v: "))
 punto_final = float(input("Ingrese el punto final: "))
