@@ -2,42 +2,36 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 #definicion de puntos iniciales y final
-punto_inicial = float(input("Ingrese el punto inicial de t: "))
-u = float(input("Ingrese el valor inicial de u: "))
-v = float(input("Ingrese el valor inicial de v: "))
+puntos_iniciales = []
+num_puntos = int(input("Ingrese el número de puntos iniciales: "))
+
+for i in range(num_puntos):
+    u = float(input(f"Ingrese el valor inicial de u para el punto {i+1}: "))
+    v = float(input(f"Ingrese el valor inicial de v para el punto {i+1}: "))
+    x0 = float(input(f"Ingrese el valor inicial de x para el punto {i+1}: "))
+    puntos_iniciales.append((u, v, x0))
+
+
+
 punto_final = float(input("Ingrese el punto final: "))
 n = float(input("Ingrese numero divisiones: ")) #divisiones
-h = (punto_final - punto_inicial) / n #paso
+h = (punto_final - puntos_iniciales[0][2 ]) / n #paso
+
 puntos = []
 puntos_sol = []
 
-'''
-def factorial(numero):
-    resultado = 1
-    for i in range(1, numero + 1):
-        resultado *= i
-    return resultado
-ene = float(input("Ingrese el valor de n: "))
-uu = (-1)**ene
-for m in range(0, int(ene/2)):
-    sumatorio = sum((-1)**m*factorial(ene-m-1)/(factorial(m)*factorial(ene-2*m-1))*((-2)**(ene-2*m-1)))
-    
-uve = 1/2*sumatorio
-'''
-'''print("Para el problema de los conejos y los zorros:")
-p = float(input("Ingrese el valor de p: "))
-q = float(input("Ingrese el valor de q: "))
-r = float(input("Ingrese el valor de r: "))
-s = float(input("Ingrese el valor de s: "))'''
+
 #funcion 1
 def funcionx(x, u, v):
+    #Aquí ponemos la ecuacion diferencial de x'
     #donde u = x
     #v = y
     # tambien se puede hacer si la ec es no lineal, si hay un y^2, ponemos la u^2 y así
-    return -v + u*(1-u**2-v**2)
+    return v
 
 def funciony(x, u, v):
-    return u + v*(1-u**2-v**2)
+    #Aquí ponemos la ecuacion diferencial de y'
+    return -u + u**2
 
 
 def iteracion(x, u, v, fx, fy):
@@ -56,26 +50,44 @@ def iteracion(x, u, v, fx, fy):
     a3 = 1/3
     a4 = 1/6
     
-    while x <= punto_final:
-        x1 = x + h
-        u1 = u + h*(a1*(k11) + a2*(k21) + a3*(k31) + a4*(k41))
-        v1 = v + h*(a1*(k12) + a2*(k22) + a3*(k32) + a4*(k42)) 
-        iteracion(x1, u1, v1, fx, fy)
-        puntos.append((u1, v1))
-        #puntos_sol.append((u1, v1))
-        print(u1, v1)
-        #print(x1, u1)
-        return v1, u1
-
-def grafica(puntos, puntos_sol):
-    x1 = []
-    y1 = []
-    for i in puntos:
-        x1.append(i[0])
-        y1.append(i[1])
-    plt.plot(x1, y1)   
-    plt.show()
+    x1 = x + h
+    u1 = u + h*(a1*(k11) + a2*(k21) + a3*(k31) + a4*(k41))
+    v1 = v + h*(a1*(k12) + a2*(k22) + a3*(k32) + a4*(k42))  
     
-iteracion(punto_inicial, u, v, funcionx, funciony)
-grafica(puntos, puntos_sol)
+    
+    return x1, u1, v1
+    
+'''while x <= punto_final:
+    x1 = x + h
+    u1 = u + h*(a1*(k11) + a2*(k21) + a3*(k31) + a4*(k41))
+    v1 = v + h*(a1*(k12) + a2*(k22) + a3*(k32) + a4*(k42)) 
+    iteracion(x1, u1, v1, fx, fy)
+    puntos.append((u1, v1))
+    print(u1, v1)
+    return x1, v1, u1'''
+
+def grafica(puntos):
+    for i, punto_inicial in enumerate(puntos):
+        u = punto_inicial[0]
+        v = punto_inicial[1]
+        x_vals = [punto_inicial[2]]
+        u_vals = [u]
+        v_vals = [v]
+    
+        while x_vals[-1] < punto_final:
+            x, u, v = iteracion(x_vals[-1], u_vals[-1], v_vals[-1], funcionx, funciony)
+            x_vals.append(x)
+            u_vals.append(u)
+            v_vals.append(v)
+            print(u, v)
+
+        plt.plot(u_vals, v_vals, label=f'Curva {i+1}')
+        
+    plt.xlabel('u')
+    plt.ylabel('v')
+    plt.legend()
+    plt.show()
+
+
+grafica(puntos_iniciales)
 
