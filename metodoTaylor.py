@@ -10,10 +10,10 @@ puntos = []
 
 #funcion 1
 def f1(x, y):
-    return (1+4*x*y)/(3*x*x)
+    return (2-3*x*(-y))/(x-1)
 
 def derf1(x, y):
-    return (4*x*y-2)/(9*x**3)
+    return (3*x + 2*y - 1)/(x-1)**2
 
 def iteracion(x, y, yder, f):
     while x <= punto_final:
