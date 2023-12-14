@@ -13,13 +13,14 @@ def f1(x, y):
     return (-2*x*(np.exp(x**2)*y-1)/np.exp(x**2))
 
 def iteracion(x, y, f):
-    while x <= punto_final:
-        x1 = x + h
-        y1 =y + h*f(x, y)
-        iteracion(x1, y1, f)
-        puntos.append((x1, y1))
-        print(x1, y1)
-        return x1, y1
+    if x > punto_final:
+        return x, y
+    x1 = x + h
+    y1 =y + h*f(x, y)
+    iteracion(x1, y1, f)
+    puntos.append((x1, y1))
+    print(x1, y1)
+    return x1, y1
 
 def grafica(puntos):
     x = []

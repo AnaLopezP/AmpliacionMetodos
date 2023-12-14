@@ -21,14 +21,15 @@ def f1(x, u, v):
     return ((2*x/(1-x**2))*v)
 
 def iteracion(x, u, v, f):
-    while x <= punto_final:
-        x1 = x + h
-        u1 = u + h*v    
-        v1 = v + h*(f (x, u, v))
-        iteracion(x1, u1, v1, f)
-        puntos.append((x1, u1))
-        print(x1, u1)
-        return x1, u1
+    if x > punto_final:
+        return x, u
+    x1 = x + h
+    u1 = u + h*v    
+    v1 = v + h*(f (x, u, v))
+    iteracion(x1, u1, v1, f)
+    puntos.append((x1, u1))
+    print(x1, u1)
+    return x1, u1
 
 def grafica(puntos):
     x = []

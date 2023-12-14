@@ -23,13 +23,14 @@ def iteracion(x, y, f):
     a3 = 1/3
     a4 = 1/6
     
-    while x <= punto_final:
-        x1 = x + h
-        y1 = y + h*(a1*k1 + a2*k2 + a3*k3 + a4*k4)
-        iteracion(x1, y1, f)
-        puntos.append((x1, y1))
-        print(x1, y1)
-        return x1, y1
+    if x > punto_final:
+        return x, y
+    x1 = x + h
+    y1 = y + h*(a1*k1 + a2*k2 + a3*k3 + a4*k4)
+    iteracion(x1, y1, f)
+    puntos.append((x1, y1))
+    print(x1, y1)
+    return x1, y1
 
 def grafica(puntos):
     x = []

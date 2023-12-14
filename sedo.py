@@ -42,16 +42,17 @@ def iteracion(x, u, v, fx, fy):
     a3 = 1/3
     a4 = 1/6
     
-    while x <= punto_final:
-        x1 = x + h
-        u1 = u + h*(a1*(k11) + a2*(k21) + a3*(k31) + a4*(k41))
-        v1 = v + h*(a1*(k12) + a2*(k22) + a3*(k32) + a4*(k42)) 
-        iteracion(x1, u1, v1, fx, fy)
-        puntos.append((x1, u1))
-        puntos_sol.append((x1, v1))
-        print(x1, u1)
-        print(x1, v1)
-        return x1, u1, v1
+    if x > punto_final:
+        return x, u
+    x1 = x + h
+    u1 = u + h*(a1*(k11) + a2*(k21) + a3*(k31) + a4*(k41))
+    v1 = v + h*(a1*(k12) + a2*(k22) + a3*(k32) + a4*(k42)) 
+    iteracion(x1, u1, v1, fx, fy)
+    puntos.append((x1, u1))
+    puntos_sol.append((x1, v1))
+    print(x1, u1)
+    print(x1, v1)
+    return x1, u1, v1
 
 def grafica(puntos, puntos_sol):
     x1 = []
