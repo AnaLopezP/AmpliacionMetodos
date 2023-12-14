@@ -16,13 +16,15 @@ def derf1(x, y):
     return (3*x + 2*y - 1)/(x-1)**2
 
 def iteracion(x, y, yder, f):
-    while x <= punto_final:
-        x1 = x + h
-        y1 = y + h*f(x, y) + ((h**2)/2)*(yder(x, y))
-        iteracion(x1, y1, yder, f)
-        puntos.append((x1, y1))
-        print(x1, y1)
-        return x1, y1
+    if x > punto_final:
+        return x, y
+    
+    x1 = x + h
+    y1 = y + h*f(x, y) + ((h**2)/2)*(yder(x, y))
+    iteracion(x1, y1, yder, f)
+    puntos.append((x1, y1))
+    print(x1, y1)
+    return x1, y1
 
 def grafica(puntos):
     x = []
