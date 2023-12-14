@@ -10,7 +10,7 @@ puntos = []
 
 #funcion 1
 def f1(x, y):
-    return (2-3*x*(-y))/(x-1)
+    return (2-3*x-y)/(x-1)
 
 def derf1(x, y):
     return (3*x + 2*y - 1)/(x-1)**2
