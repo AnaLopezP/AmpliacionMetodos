@@ -23,7 +23,7 @@ def funcionx(x, u, v):
     return p*u -q*u*v
 
 def funciony(x, u, v):
-    return -r*u + s*u*v
+    return -r*v + s*u*v
 
 
 def iteracion(x, u, v, fx, fy):

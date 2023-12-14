@@ -12,7 +12,7 @@ puntos = []
 puntos_sol = []
 
 
-def factorial(numero):
+'''def factorial(numero):
     resultado = 1
     for i in range(1, numero + 1):
         resultado *= i
@@ -22,7 +22,7 @@ uu = (-1)**ene
 for m in range(0, int(ene/2)):
     sumatorio = sum((-1)**m*factorial(ene-m-1)/(factorial(m)*factorial(ene-2*m-1))*((-2)**(ene-2*m-1)))
     
-uve = 1/2*sumatorio
+uve = 1/2*sumatorio'''
 
 
 
