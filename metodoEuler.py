@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
+
 #definicion de puntos iniciales y final
-punto_inicial = float(input("Ingrese el punto inicial: "))
+punto_inicial = float(input("Ingrese el punto inicial: ")) 
 y0 = float(input("Ingrese el valor de y0: "))
 punto_final = float(input("Ingrese el punto final: "))
 n = float(input("Ingrese numero divisiones: ")) #divisiones
@@ -31,7 +32,8 @@ def grafica(puntos):
     plt.plot(x, y)
     plt.show()
     
-    
+
+#Funcion para iterar con la solucion particular
 def iteracion_solucion(x, f):
     while x <= punto_final:
         x1 = x + h
@@ -41,23 +43,13 @@ def iteracion_solucion(x, f):
         print(x1, y1)
         return x1, y1
     
-def solucion1(x):
+#Funciones particulares con la C calculada. cambio la C según el valor inicial
+def solucion(x):
     return ((x**2)/np.exp(x**2))
 
-def solucion2(x):
-    return ((1 + x**2)/np.exp(x**2))
-
-def solucion3(x):
-    return (-1 + (x**2)/np.exp(x**2))
 
 
 iteracion(punto_inicial, y0, f1)
 grafica(puntos)
-iteracion_solucion(punto_inicial, solucion1)
-grafica(puntos_sol)
-puntos_sol = []
-iteracion_solucion(punto_inicial, solucion2)
-grafica(puntos_sol)
-puntos_sol = []
-iteracion_solucion(punto_inicial, solucion3)
+iteracion_solucion(punto_inicial, solucion)
 grafica(puntos_sol)
