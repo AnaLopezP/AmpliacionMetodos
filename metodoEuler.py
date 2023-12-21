@@ -11,7 +11,7 @@ puntos = []
 puntos_sol = []
 #funcion 1
 def f1(x, y):
-    return (-2*x*(np.exp(x**2)*y-1)/np.exp(x**2))
+    return (9.8-(0.4/(10- 0.1*x))*y)
 
 def iteracion(x, y, f):
     if x > punto_final:
@@ -51,5 +51,5 @@ def solucion(x):
 
 iteracion(punto_inicial, y0, f1)
 grafica(puntos)
-iteracion_solucion(punto_inicial, solucion)
-grafica(puntos_sol)
+'''iteracion_solucion(punto_inicial, solucion)
+grafica(puntos_sol)'''
