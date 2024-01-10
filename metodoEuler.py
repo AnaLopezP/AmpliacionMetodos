@@ -2,16 +2,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 #definicion de puntos iniciales y final
-punto_inicial = float(input("Ingrese el punto inicial: ")) 
+punto_inicial = float(input("Ingrese el punto inicial x0: ")) 
 y0 = float(input("Ingrese el valor de y0: "))
-punto_final = float(input("Ingrese el punto final: "))
+punto_final = float(input("Ingrese el punto final xi: "))
 n = float(input("Ingrese numero divisiones: ")) #divisiones
 h = (punto_final - punto_inicial) / n #paso
 puntos = []
 puntos_sol = []
 #funcion 1
+#Aqui se pone la funcion F (es decir la y' despejada)
 def f1(x, y):
-    return (9.8-(0.4/(10- 0.1*x))*y)
+    return (x + y)/(x-y)
 
 def iteracion(x, y, f):
     if x > punto_final:
