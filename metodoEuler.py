@@ -57,11 +57,11 @@ def solucion3(x):
 
 iteracion(punto_inicial, y0, f1)
 grafica(puntos)
-iteracion_solucion(punto_inicial, solucion)
+'''iteracion_solucion(punto_inicial, solucion)
 grafica(puntos_sol)
 puntos_sol = []
 iteracion_solucion(punto_inicial, solucion2)
 grafica(puntos_sol)
 puntos_sol = []
 iteracion_solucion(punto_inicial, solucion3)
-grafica(puntos_sol)
+grafica(puntos_sol)'''
