@@ -12,7 +12,7 @@ puntos_sol = []
 #funcion 1
 #Aqui se pone la funcion F (es decir la y' despejada)
 def f1(x, y):
-    return y - x**2 + 1
+    return (-2*x*(np.exp(x**2)*y -1))/np.exp(x**2)
 
 def iteracion(x, y, f):
     if x > punto_final:
@@ -47,21 +47,22 @@ def iteracion_solucion(x, f):
     
 #Funciones particulares con la C calculada. cambio la C según el valor inicial. Es decir aquí se pone la y(x). 
 def solucion(x):
-    return x**2 + 2*x + 1 - 0.5*np.exp(x)
+    return x**2 / np.exp(x**2)
 def solucion2(x):
-    return x**2 + 2*x + 1 - np.exp(x)
+    return (1 + x**2) / np.exp(x**2)
 def solucion3(x):
-    return x**2 + 2*x + 1 - 2*np.exp(x)
+    return (-1 + x**2) / np.exp(x**2)
 
-
+'''Para las soluciones particulares, da igual el valor de y0, ya que ese se usa solo en el método original.
+De esta manera, la primera gráfica tendrá que coincidir con la gráfica exacta de la solución particular, únicamente en el punto que haya insertadop x0, y0. '''
 
 iteracion(punto_inicial, y0, f1)
 grafica(puntos)
-'''iteracion_solucion(punto_inicial, solucion)
+iteracion_solucion(punto_inicial, solucion)
 grafica(puntos_sol)
 puntos_sol = []
 iteracion_solucion(punto_inicial, solucion2)
 grafica(puntos_sol)
 puntos_sol = []
 iteracion_solucion(punto_inicial, solucion3)
-grafica(puntos_sol)'''
+grafica(puntos_sol)
