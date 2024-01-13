@@ -18,7 +18,7 @@ def f1(x, u, v):
     #donde u = y
     #v = y'
     #f(x) es el termino independiente. despejo y'' de la ecuacion
-    return ((2*x/(1-x**2))*v)
+    return (np.exp(-2*x)/(1-x**2)) - 4*u - 4*v
 
 def iteracion(x, u, v, f):
     if x > punto_final:

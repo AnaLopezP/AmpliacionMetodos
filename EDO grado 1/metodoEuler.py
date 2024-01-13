@@ -12,7 +12,7 @@ puntos_sol = []
 #funcion 1
 #Aqui se pone la funcion F (es decir la y' despejada)
 def f1(x, y):
-    return (-2*x*(np.exp(x**2)*y -1))/np.exp(x**2)
+    return 9.8 - (0.4/(10-0.1*x))*y
 
 def iteracion(x, y, f):
     if x > punto_final:
@@ -58,11 +58,11 @@ De esta manera, la primera gráfica tendrá que coincidir con la gráfica exacta
 
 iteracion(punto_inicial, y0, f1)
 grafica(puntos)
-iteracion_solucion(punto_inicial, solucion)
+'''iteracion_solucion(punto_inicial, solucion)
 grafica(puntos_sol)
 puntos_sol = []
 iteracion_solucion(punto_inicial, solucion2)
 grafica(puntos_sol)
 puntos_sol = []
 iteracion_solucion(punto_inicial, solucion3)
-grafica(puntos_sol)
+grafica(puntos_sol)'''
