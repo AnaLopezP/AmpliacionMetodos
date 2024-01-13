@@ -5,8 +5,8 @@ import numpy as np
 
 #definicion de puntos iniciales y final
 punto_inicial = float(input("Ingrese el punto inicial: "))
-u = float(input("Ingrese el valor inicial de u: "))
-v = float(input("Ingrese el valor inicial de v: "))
+u = float(input("Ingrese el valor inicial de u: ")) #u es la y
+v = float(input("Ingrese el valor inicial de v: ")) #v es la y'
 punto_final = float(input("Ingrese el punto final: "))
 n = float(input("Ingrese numero divisiones: ")) #divisiones
 h = (punto_final - punto_inicial) / n #paso
