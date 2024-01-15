@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import math
 
 #definicion de puntos iniciales y final
 punto_inicial = float(input("Ingrese el punto inicial: "))
@@ -11,7 +12,24 @@ h = (punto_final - punto_inicial) / n #paso
 puntos = []
 puntos_sol = []
 
-N = float(input("Ingrese el valor de N: "))
+'''#Ejericio en concreto con un factorial y sumatorio. 
+#Faltaria poner las n a las funciones y da error pq divides entre 0
+
+ene = float(input('Introduce el valor de n: '))
+uu = (-1)**ene
+
+def factorial(numero):
+    resultado = 1
+    for i in range(1, int(numero) +1):
+        resultado *= i
+    return resultado
+
+sumatorio = 0
+for m in range (0, math.floor(ene/2)):
+    sumatorio +=  (-1)**m * ( factorial( (ene - m - 1)) / ( factorial(m) * factorial(ene - 2*m-1) ) ) * (-2)**(ene-2*m-1) 
+vv = (ene/2) *sumatorio
+'''
+
 
 #funcion 1
 def f1(x, u, v):
@@ -19,7 +37,7 @@ def f1(x, u, v):
     #v = y'
     #f(x) es el termino independiente. despejo y'' de la ecuacion
     # tambien se puede hacer si la ec es no lineal, si hay un y^2, ponemos la u^2 y así
-    return (-N*(N + 1.5 + 1)*u - (1 - 1.5 - (2 + 1.5 + 1)*x)*v)/(1-x**2)
+    return  1
 
 def iteracion(x, u, v, f):
     k11 = v
@@ -55,5 +73,7 @@ def grafica(puntos):
     plt.plot(x, y)
     plt.show()
     
+
+
 iteracion(punto_inicial, u, v, f1)
 grafica(puntos)
