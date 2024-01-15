@@ -12,7 +12,7 @@ puntos_sol = []
 #funcion 1
 #Aqui se pone la funcion F (es decir la y' despejada)
 def f1(x, y):
-    return 9.8 - (0.4/(10-0.1*x))*y
+    return 9.8 - (0.5/(10-0.1*x))*y
 
 def iteracion(x, y, f):
     if x > punto_final:
