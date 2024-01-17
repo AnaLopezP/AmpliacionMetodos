@@ -4,19 +4,19 @@ import math
 
 #definicion de puntos iniciales y final
 punto_inicial = float(input("Ingrese el punto inicial: "))
-u = float(input("Ingrese el valor inicial de u: "))
-v = float(input("Ingrese el valor inicial de v: "))
+'''u = float(input("Ingrese el valor inicial de u: "))
+v = float(input("Ingrese el valor inicial de v: "))'''
 punto_final = float(input("Ingrese el punto final: "))
 n = float(input("Ingrese numero divisiones: ")) #divisiones
 h = (punto_final - punto_inicial) / n #paso
 puntos = []
 puntos_sol = []
 
-'''#Ejericio en concreto con un factorial y sumatorio. 
+#Ejericio en concreto con un factorial y sumatorio. 
 #Faltaria poner las n a las funciones y da error pq divides entre 0
 
-ene = float(input('Introduce el valor de n: '))
-uu = (-1)**ene
+ene = int(input('Introduce el valor de n: '))
+uu = ((-1)**ene) * (ene + 1)
 
 def factorial(numero):
     resultado = 1
@@ -26,18 +26,18 @@ def factorial(numero):
 
 sumatorio = 0
 for m in range (0, math.floor(ene/2)):
-    sumatorio +=  (-1)**m * ( factorial( (ene - m - 1)) / ( factorial(m) * factorial(ene - 2*m-1) ) ) * (-2)**(ene-2*m-1) 
-vv = (ene/2) *sumatorio
-'''
+    sumatorio +=  ((-1)**m)*float(math.comb(ene-m, m))*(ene-2*m)*(-2)**(n-2*m-1)
+vv = 2 *sumatorio
+
 
 
 #funcion 1
-def f1(x, u, v):
+def f1(x, uu, vv):
     #donde u = y
     #v = y'
     #f(x) es el termino independiente. despejo y'' de la ecuacion
     # tambien se puede hacer si la ec es no lineal, si hay un y^2, ponemos la u^2 y así
-    return  1
+    return  ((3*x*vv) - ene*(ene + 2)*uu)/(1 -x**2)
 
 def iteracion(x, u, v, f):
     k11 = v
@@ -75,5 +75,5 @@ def grafica(puntos):
     
 
 
-iteracion(punto_inicial, u, v, f1)
+iteracion(punto_inicial, uu, vv, f1)
 grafica(puntos)
